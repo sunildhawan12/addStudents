@@ -8,20 +8,17 @@ async function submitStudent() {
 
   // 🔴 Validation
   if (!id || !name || !phone) {
-    msg.textContent = "❗ कृपया सभी फ़ील्ड भरें।";
-    msg.style.color = "red";
+    msg.innerHTML = `<span style="color: red; font-weight: bold;">❗ कृपया सभी फ़ील्ड भरें।</span>`;
     return;
   }
 
   // 🔴 पहले से सबमिट किया हुआ ID चेक करें
   if (submittedIds.includes(id)) {
-    msg.textContent = "⚠️ यह छात्र पहले ही जोड़ा जा चुका है!";
-    msg.style.color = "orange";
+    msg.innerHTML = `❗ <span style="color: red; font-weight: bold;">Sorry!</span> <span style="color: #0984e3; font-weight: bold;">${name}</span> आपको पहले से जोड़ा जा चुका है ❗`;
     return;
   }
 
-  msg.textContent = "⏳ कृपया प्रतीक्षा करें...";
-  msg.style.color = "#555";
+  msg.innerHTML = `⏳ <span style="color: #555;">कृपया प्रतीक्षा करें...</span>`;
 
   const formData = new URLSearchParams();
   formData.append("id", id);
@@ -35,18 +32,15 @@ async function submitStudent() {
     });
 
     if (response.ok) {
-      msg.textContent = `✅ छात्र ${name} को सफलतापूर्वक जोड़ा गया!`;
-      msg.style.color = "green";
-      submittedIds.push(id); // ✅ Add to already submitted list
+      msg.innerHTML = `👋 <span style="color: green; font-weight: bold;">Hello!</span> <span style="color: #0984e3; font-weight: bold;">${name}</span> आपको सफलतापूर्वक जोड़ा गया ✅!`;
+      submittedIds.push(id); // ✅ Add to local ID store
       document.getElementById("id").value = "";
       document.getElementById("name").value = "";
       document.getElementById("phone").value = "";
     } else {
-      msg.textContent = "❌ डेटा भेजने में त्रुटि हुई।";
-      msg.style.color = "red";
+      msg.innerHTML = `<span style="color: red;">❌ डेटा भेजने में त्रुटि हुई।</span>`;
     }
   } catch (error) {
-    msg.textContent = "❌ नेटवर्क त्रुटि! कृपया पुनः प्रयास करें।";
-    msg.style.color = "red";
+    msg.innerHTML = `<span style="color: red;">❌ नेटवर्क त्रुटि! कृपया पुनः प्रयास करें।</span>`;
   }
 }
