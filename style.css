@@ -1,55 +1,72 @@
- body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #6dd5ed, #2193b0);
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
+/* पूरे पेज को Center करने के लिए */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #6dd5ed, #2193b0);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-    .form-box {
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-      width: 100%;
-      max-width: 400px;
-    }
+/* Add Student Box */
+.add-student-box {
+  background-color: #fff;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  animation: slideDown 0.5s ease; /* Optional animation */
+}
 
-    h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #333;
-    }
+/* Input Styling */
+.add-student-box input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  box-sizing: border-box;
+}
 
-    input {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      font-size: 15px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-    }
+/* Button Styling */
+.add-student-box button {
+  width: 100%;
+  padding: 12px;
+  background-color: #0984e3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
 
-    button {
-      width: 100%;
-      padding: 10px;
-      font-size: 16px;
-      border: none;
-      border-radius: 8px;
-      margin-top: 10px;
-      cursor: pointer;
-      background-color: #0984e3;
-      color: white;
-    }
+.add-student-box button:hover {
+  background-color: #0a66c2;
+}
 
-    .back-btn {
-      background-color: #d63031;
-    }
+/* Back Button */
+.add-student-box .back-btn {
+  background-color: #636e72;
+}
 
-    #msg {
-      text-align: center;
-      margin-top: 10px;
-      font-weight: bold;
-    }
+.add-student-box .back-btn:hover {
+  background-color: #2d3436;
+}
+
+/* Message */
+#msg {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Optional animation */
+@keyframes slideDown {
+  from { transform: translateY(-30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
