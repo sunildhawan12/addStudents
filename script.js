@@ -32,7 +32,7 @@ async function submitStudent() {
     });
 
     if (response.ok) {
-      msg.innerHTML = `👋 <span style="color: green; font-weight: bold;">Hello!</span> <span style="color: #0984e3; font-weight: bold;">${name}</span> 👉 " आपको सफलतापूर्वक जोड़ा गया है। कृपया 2 घंटे बाद अपनी  ID से लॉगिन करें।" ✅!`;
+      msg.innerHTML = `👋 <span style="color: green; font-weight: bold;">Hello!</span> <span style="color: #0984e3; font-weight: bold;">${name}</span> 👉 " आपको सफलतापूर्वक जोड़ा गया है। कृपया 1-2 घंटे बाद अपनी  ID से लॉगिन करें।" ✅!`;
       submittedIds.push(id); // ✅ Add to local ID store
       document.getElementById("id").value = "";
       document.getElementById("name").value = "";
