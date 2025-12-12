@@ -85,6 +85,7 @@
 
         // 3. 🚀 पेज लोड पर IDs को लोड करना शुरू करें और AOS को initialize करें
         window.onload = function() {
-            AOS.init({ duration: 800, once: true });
+            AOS.init({ duration: 500, once: true });
             loadExistingIds(); 
         };
+
